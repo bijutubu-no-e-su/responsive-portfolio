@@ -11,7 +11,7 @@ gulp.task('sass', () => {
 gulp.task('babel', () => {
     const babel = require ('gulp-babel')
     return gulp
-        .src('./src/**/*.js')
+        .src('./src/js/*.js')
         .pipe(babel())
         .pipe(gulp.dest('./dist'))
 })
