@@ -1,16 +1,17 @@
-const gulp = require('gulp');
-const browserSync = require('browser-sync').create();
-const eslint = require('gulp-eslint');
+import gulp from 'gulp';
+// const gulp = require('gulp');
+import browserSync from 'browser-sync';
+import eslint from 'gulp-eslint';
+import sass from 'gulp-sass';
+import babel from 'gulp-babel';
 
 gulp.task('sass', () => {
-  const sass = require('gulp-sass');
   return gulp
     .src('./src/scss/*.scss')
     .pipe(sass())
     .pipe(gulp.dest('./dist/css'));
 });
 gulp.task('babel', () => {
-  const babel = require('gulp-babel');
   return gulp
     .src('./src/js/*.js')
     .pipe(babel())
