@@ -4,6 +4,8 @@ import browserSync from 'browser-sync';
 import eslint from 'gulp-eslint';
 import sass from 'gulp-sass';
 import babel from 'gulp-babel';
+import browserify from 'browserify';
+import source from 'vinyl-source-stream';
 
 gulp.task('sass', () => {
   return gulp
@@ -16,6 +18,15 @@ gulp.task('babel', () => {
     .src('./src/js/*.js')
     .pipe(babel())
     .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('browserify', () => {
+  return browserify({
+    entries: ['./dist/main.js']
+  })
+    .bundle()
+    .pipe(source('bundle.js'))
+    .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('lint', () => {
@@ -39,10 +50,11 @@ gulp.task('watch', () => {
     browserSync.reload();
     done();
   };
-  gulp.watch('./dist/**/*', browserReload);
   gulp.watch('./src/scss/*.scss', gulp.series('sass'));
   // gulp.watch('./src/js/*.js', gulp.series('lint'));
   gulp.watch('./src/js/*.js', gulp.series('babel'));
+  gulp.watch('./dist/main.js', gulp.series('browserify'));
+  gulp.watch('./dist/**/*', browserReload);
 });
 
 gulp.task('default', gulp.series('serve', 'watch'));
