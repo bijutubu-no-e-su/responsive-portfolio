@@ -6,6 +6,7 @@ import sass from 'gulp-sass';
 import babel from 'gulp-babel';
 import browserify from 'browserify';
 import source from 'vinyl-source-stream';
+import babelify from 'babelify';
 
 gulp.task('sass', () => {
   return gulp
@@ -13,18 +14,22 @@ gulp.task('sass', () => {
     .pipe(sass())
     .pipe(gulp.dest('./dist/css'));
 });
-gulp.task('babel', () => {
-  return gulp
-    .src('./src/js/*.js')
-    .pipe(babel())
-    .pipe(gulp.dest('./dist'));
-});
+// gulp.task('babel', () => {
+//   return gulp
+//     .src('./src/js/*.js')
+//     .pipe(babel())
+//     .pipe(gulp.dest('./dist'));
+// });
 
 gulp.task('browserify', () => {
   return browserify({
-    entries: ['./dist/main.js']
+    entries: ['./src/js/main.js']
   })
+    .transform(babelify)
     .bundle()
+    .on('error', function(err) {
+      console.log('Error : ' + err.message);
+    })
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('./dist/'));
 });
@@ -52,8 +57,8 @@ gulp.task('watch', () => {
   };
   gulp.watch('./src/scss/*.scss', gulp.series('sass'));
   // gulp.watch('./src/js/*.js', gulp.series('lint'));
-  gulp.watch('./src/js/*.js', gulp.series('babel'));
-  gulp.watch('./dist/main.js', gulp.series('browserify'));
+  // gulp.watch('./src/js/*.js', gulp.series('babel'));
+  gulp.watch('./src/js/*.js', gulp.series('browserify'));
   gulp.watch('./dist/**/*', browserReload);
 });
 
