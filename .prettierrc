@@ -1,7 +1,7 @@
 printWidth: 120 # 1行の文字数制限
 tabWidth: 2 #タブのwidth
-singleQuote: true #文字列の囲いがsingleQuoteの場合はtrue、doubleQuoteの場合はfalse
+singleQuote: false #文字列の囲いがsingleQuoteの場合はtrue、doubleQuoteの場合はfalse
 trailingComma: none
 semi: true
 bracketSpacing: true #{}の前後のスペースを入れるかどうか
-parser: typescript # flow もあります。
+#parser: typescript # flow もあります。

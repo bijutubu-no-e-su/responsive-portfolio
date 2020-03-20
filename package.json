@@ -23,6 +23,14 @@
     "gulp-eslint": "^6.0.0",
     "gulp-sass": "^4.0.2",
     "prettier": "^1.19.1",
+    "stylelint": "^13.2.1",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-recess-order": "^2.0.4",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.0.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.15.0",
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {}
