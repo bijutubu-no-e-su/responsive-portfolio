@@ -1,6 +1,6 @@
-# gulp-js-playground
-this is a template for js and scss studying.
-this template is able to transpile es6(es2015),scss to css.
+# responsive-portfolio
+this is a portfolio using js and scss.
+this portfolio using es6(es2015),scss to css.
 if you use "yarn" then type below
 
 ```shell
