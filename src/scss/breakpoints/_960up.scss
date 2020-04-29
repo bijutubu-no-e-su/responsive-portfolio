@@ -1,0 +1,34 @@
+.font-sm {
+  font-size: 16px;
+}
+.font-md {
+  font-size: 19px;
+}
+.font-lr {
+  font-size: 23px;
+}
+.font-lg {
+  font-size: 36px;
+}
+.mb-lg {
+  margin-bottom: 150px !important;
+}
+.pd-lg {
+  padding-bottom: 150px !important;
+}
+.header {
+  &__nav {
+    display: block;
+  }
+  & .logo {
+    font-size: 38px;
+  }
+  &__inner {
+    justify-content: space-between;
+  }
+}
+.mobile-menu {
+  &__btn {
+    display: none;
+  }
+}

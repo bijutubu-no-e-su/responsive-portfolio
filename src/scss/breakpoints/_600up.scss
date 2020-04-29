@@ -1,0 +1,19 @@
+.flex {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.footer {
+  & .logo {
+    justify-content: flex-start;
+  }
+  &__li {
+    paddint: 0;
+    margin-right: 10px;
+    margin-left: 20px;
+  }
+  &__copyright {
+    margin-right: 30px;
+    margin-left: 15px;
+  }
+}

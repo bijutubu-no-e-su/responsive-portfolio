@@ -1,0 +1,88 @@
+@import "./modules/mixin";
+@import "./modules/variables";
+
+#global-container {
+  opacity: 0;
+}
+.pace-done #global-container {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.pace {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 200px;
+  height: 50px;
+  margin: auto;
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.pace .pace-progress {
+  text-align: center;
+  transform: none !important;
+}
+
+.pace .pace-progress::after {
+  display: block;
+  font-family: "Helvetica Neue", "Yu Gothic", "Meiro", sans-serif;
+  font-size: 2em;
+  font-weight: 100;
+  color: $cSubTitle;
+  content: attr(data-progress-text);
+}
+
+// .pace .pace-activity {
+//   position: absolute;
+//   z-index: 2001;
+//   width: 100%;
+//   height: 28px;
+//   border-radius: 10px;
+//   box-shadow: inset 0 0 0 2px #29d, inset 0 0 0 7px #fff;
+// }
+
+.pace.pace-inactive {
+  display: none;
+}
+.pace-progress-inner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  background-color: $cWineRed;
+  @include animation(
+    $name: sk-rotateplane,
+    $duration: 1.2s,
+    $iteration-count: infinite,
+    $timing-function: ease-in-out
+  );
+}
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+  }
+}

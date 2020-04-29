@@ -1,11 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  test
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Kameron:400,700|Noto+Sans+JP&display=swap&subset=japanese"
+      rel="stylesheet"
+    />
+    <title>sample responsive design</title>
+  </head>
+  <body>
+    <div id="global-container">
+      <div id="container">
+        <div class="hero">
+          <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <div class="hero__title">quit</div>
+                <img src="images/night-image1.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <div class="hero__title">quit</div>
+                <img src="images/night-image2.jpg" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <div class="hero__title">quit</div>
+                <img src="images/night-image3.jpg" alt="" />
+              </div>
+            </div>
+            <div class="hero__footer">
+              <img class="hero__downarrow" src="images/arrow.svg" alt="" />
+              <span class="hero__scrolltext">go down</span>
+            </div>
+          </div>
+        </div>
+        <div id="main-content">
+          <main>
+            <section class="profile">
+              <div class="profile__inner">
+                <div class="profile__title">profile</div>
+                <ul class="profile__detail">
+                  <li>date of born: 12/4/1988</li>
+                  <li>birth place: tokyo</li>
+                  <li>blood type: B</li>
+                  <li>occupation: office worker(boring)</li>
+                  <li>address: tokyo</li>
+                </ul>
+
+                <div class="profile__img cover-slide hover-darken">
+                  <img class="img-zoom" src="images/night-image-profile.jpg" alt="" />
+                </div>
+              </div>
+            </section>
+            <section class="skill">
+              <div class="skill__inner">
+                <div class="skill__title">skill</div>
+                <div class="skill__img cover-slide hover-darken">
+                  <img class="img-zoom" src="images/night-image-skill.jpg" alt="" />
+                </div>
+              </div>
+            </section>
+            <section class="github">
+              <div class="github__inner">
+                <div class="github__title">github</div>
+                <div class="github__img cover-slide hover-darken">
+                  <img class="img-zoom" src="images/night-image-github.jpg" alt="" />
+                </div>
+              </div>
+            </section>
+            <section class="qiita">
+              <div class="qiita__inner">
+                <div class="qiita__title">qiita</div>
+                <div class="qiita__img cover-slide hover-darken">
+                  <img class="img-zoom" src="images/night-image-qiita.jpg" alt="" />
+                </div>
+              </div>
+            </section>
+          </main>
+        </div>
+        <div class="mobile-menu__cover"></div>
+        <header class="header">
+          <div class="header__inner appear up">
+            <div class="logo item">
+              <span class="logo__sample">Sample</span>
+              <span class="logo__site">Site</span>
+            </div>
+            <nav class="header__nav">
+              <ul class="header__ul">
+                <li class="header__li item"><a href="#">profile</a></li>
+                <li class="header__li item"><a href="#">skill</a></li>
+                <li class="header__li item"><a href="#">github</a></li>
+                <li class="header__li item"><a href="#">qiita</a></li>
+                <li class="header__li item"><a class="btn filled" href="#">Contact</a></li>
+              </ul>
+            </nav>
+            <button class="mobile-menu__btn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </header>
+
+        <div id="main-content"></div>
+        <footer class="footer appear up">
+          <!-- <div class="logo item"> -->
+          <!--   <img class="logo__img" src="images/logo.svg" alt="" /> -->
+          <!--   <span class="logo__stay">Stay</span> -->
+          <!--   <span class="logo__world">World</span> -->
+          <!-- </div> -->
+          <nav class="footer__nav">
+            <ul class="footer__ul">
+              <li class="footer__li item"><a href="#">profile</a></li>
+              <li class="footer__li item"><a href="#">skill</a></li>
+              <li class="footer__li item"><a href="#">github</a></li>
+              <li class="footer__li item"><a href="#">qiita</a></li>
+              <li class="footer__li item"><a href="#">contact</a></li>
+            </ul>
+            <div class="footer__copyright">
+              <span>&copy; 2020 bijutubu-no-e-su</span>
+              <br />
+              <span>desighed by bijutusbu-no-e-su</span>
+            </div>
+          </nav>
+        </footer>
+      </div>
+      <nav class="mobile-menu">
+        <ul class="mobile-menu__main">
+          <li class="mobile-menu__item">
+            <a href="#" class="mobile-menu__link">
+              <span class="main-title">profile</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="#" class="mobile-menu__link">
+              <span class="main-title">skill</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="#" class="mobile-menu__link">
+              <span class="main-title">github</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="#" class="mobile-menu__link">
+              <span class="main-title">qiita</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="#" class="mobile-menu__link">
+              <span class="main-title">contact</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <script src="./bundle.js"></script>
+  </body>
 </html>

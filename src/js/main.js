@@ -1,5 +1,4 @@
 import { HeroSlider } from "./libs/hero-slider";
-import { TweenTextAnimation } from "./libs/text-animation";
 import { ScrollObserver } from "./libs/scroll-observer";
 import { MobileMenu } from "./libs/mobile-menu";
 import pace from "pace-js";
@@ -11,8 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 class Main {
   constructor() {
-    this.header = document.querySelector(".header");
-    this.sides = document.querySelectorAll(".side");
+    this.sections = document.querySelectorAll("section");
     this._observers = [];
     this._init();
   }
@@ -25,70 +23,37 @@ class Main {
   _init() {
     new MobileMenu();
     this.hero = new HeroSlider(".swiper-container");
-    console.log("hero");
     setTimeout(() => {
       this.hero.stop();
     }, 15000);
     pace.on("done", this._paceDone.bind(this));
   }
-  _paceDone() {
-    this._scrollInit();
-  }
-  _navAnimation(el, inview) {
-    if (inview) {
-      this.header.classList.remove("triggered");
-    } else {
-      this.header.classList.add("triggered");
-    }
-  }
-  _sideAnimation(el, inview) {
-    if (inview) {
-      this.sides.forEach(side => side.classList.add("inview"));
-    } else {
-      this.sides.forEach(side => side.classList.remove("inview"));
-    }
-  }
-  _inviewAnimation(el, inview) {
-    if (inview) {
-      el.classList.add("inview");
-    } else {
-      el.classList.remove("inview");
-    }
-  }
-  _textAnimation(el, inview) {
-    if (inview) {
-      const ta = new TweenTextAnimation(el);
-      ta.animate();
-    }
-  }
   _toggleSlideAnimation(el, inview) {
     if (inview) {
+      console.log("now inview");
       this.hero.start();
     } else {
       this.hero.stop();
     }
   }
-
-  _destroyObservers() {
-    this.observers.forEach(ob => {
-      ob.destroy();
-    });
+  _paceDone() {
+    this._scrollInit();
+    this._clickInit();
   }
+  _clickInit() {
+    this.sections.forEach(section =>
+      section.addEventListener("click", function() {
+        section.classList.toggle("clicked");
+        console.log(section);
 
-  destroy() {
-    this._destroyObservers();
+        // console.log(section.className);
+        // const title = section.querySelector(`.${section.className}__title`);
+        // console.log(title);
+        // title.classList.toggle("clicked");
+      })
+    );
   }
-
   _scrollInit() {
-    this.observers = new ScrollObserver(".nav-trigger", this._navAnimation.bind(this), { once: false });
-    console.log(this.observers);
-    this.observers = new ScrollObserver(".cover-slide", this._inviewAnimation);
-    this.observers = new ScrollObserver(".appear", this._inviewAnimation);
-    this.observers = new ScrollObserver(".tween-animate-title", this._textAnimation);
     this.observers = new ScrollObserver(".swiper-container", this._toggleSlideAnimation.bind(this), { once: false });
-    this.observers = new ScrollObserver("#main-content", this._sideAnimation.bind(this), {
-      once: false,
-      rootMargin: "-300px 0px"
-    });
   }
 }
