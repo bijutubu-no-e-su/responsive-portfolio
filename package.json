@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint src/js/*.js",
-    "browserify": "browserify dist/main.js -o dist/bundle.js"
+    "browserify": "browserify dist/main.js -o dist/bundle.js",
+    "gulp": "gulp"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
