@@ -64,3 +64,4 @@ gulp.task("watch", () => {
 });
 
 gulp.task("default", gulp.series("serve", "watch"));
+gulp.task("build", gulp.series("sass", "browserify"));
