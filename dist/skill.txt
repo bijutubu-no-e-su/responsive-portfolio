@@ -1,0 +1,14 @@
+<li>C#</li>
+<li>css</li>
+<li>git</li>
+<li>html</li>
+<li>java</li>
+<li>js</li>
+<li>python</li>
+<li>react</li>
+<li>scss</li>
+<li>svn</li>
+<li>ts</li>
+<li>vb.net</li>
+<li></li>
+<li></li>

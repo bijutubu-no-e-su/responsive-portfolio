@@ -45,7 +45,7 @@ img {
 #container {
   position: relative;
   z-index: 10;
-  background-color: $cWhite;
+  background-color: $cBlack;
   transition: transform 0.5s, box-shadow 0.5s;
 }
 .header {
@@ -136,6 +136,7 @@ img {
   }
   &__copyright {
     color: $cSubTitle;
+    oransform: none;
   }
   &__li {
     padding: 0;
@@ -180,7 +181,8 @@ img {
   position: relative;
   &.clicked {
     & .profile__title {
-      display: none;
+      opacity: 0;
+      transition: all 1.5s;
     }
     & .profile__detail {
       position: absolute;
@@ -194,7 +196,8 @@ img {
       text-decoration: none;
       list-style: none;
       opacity: 1;
-      transform: translate(-50%);
+      transition: all 1.5s;
+      transform: translate(-50%) !important;
     }
   }
   &__inner {
@@ -210,16 +213,29 @@ img {
     font-size: 25px;
     color: $cWhite;
     opacity: 1;
+    transition: all 1.5s;
     transform: translate(-50%);
   }
   &__detail {
-    display: none;
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    z-index: 2;
+    display: inline;
+    padding-left: 0;
+    font-size: 20px;
+    color: $cWhite;
+    text-decoration: none;
+    list-style: none;
+    opacity: 0;
+    transition: all 1.5s;
+    transform: translate(-50%) !important;
   }
   &__img {
     height: 400px;
     transition: box-shadow 1ms linear 0.8s;
     @extend .mb-sm;
-    & > img {
+    & img {
       position: absolute;
       z-index: 1;
       width: 90%;
@@ -232,11 +248,45 @@ img {
 }
 .skill {
   @extend .profile;
+  &.clicked {
+    & .skill__title {
+      opacity: 0;
+      transition: all 1.5s;
+    }
+    & .skill__detail {
+      position: absolute;
+      top: 36%;
+      left: 27%;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      padding-left: 0;
+      font-size: 20px;
+      color: $cBgSilver;
+      text-decoration: none;
+      list-style: none;
+      opacity: 1;
+      transition: all 1.5s;
+      // transform: translate(-50%) !important;
+    }
+  }
   &__inner {
     @extend .profile__inner;
   }
   &__title {
     @extend .profile__title;
+  }
+  &__detail {
+    @extend .profile__detail;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 250px;
+    & > li {
+      padding: 10px;
+      margin: 10px;
+    }
   }
   &__img {
     @extend .profile__img;

@@ -554,6 +554,49 @@ template {
 .hover-darken:hover::before {
   background-color: rgba(0, 0, 0, 0.4); }
 
+.appear.up .item {
+  transform: translateY(6px); }
+
+.appear.down .item {
+  transform: translateY(-6px); }
+
+.appear.left .item {
+  transform: translateX(40px); }
+
+.appear.right .item {
+  transform: translateX(-40px); }
+
+.appear.content .item {
+  transform: translateX(50px); }
+
+.appear .item {
+  opacity: 0;
+  transition: all 0.8s; }
+
+.appear.inview .item {
+  opacity: 1;
+  transform: none; }
+  .appear.inview .item:nth-child(1) {
+    transition-delay: 0.1s; }
+  .appear.inview .item:nth-child(2) {
+    transition-delay: 0.2s; }
+  .appear.inview .item:nth-child(3) {
+    transition-delay: 0.3s; }
+  .appear.inview .item:nth-child(4) {
+    transition-delay: 0.4s; }
+  .appear.inview .item:nth-child(5) {
+    transition-delay: 0.5s; }
+  .appear.inview .item:nth-child(6) {
+    transition-delay: 0.6s; }
+  .appear.inview .item:nth-child(7) {
+    transition-delay: 0.7s; }
+  .appear.inview .item:nth-child(8) {
+    transition-delay: 0.8s; }
+  .appear.inview .item:nth-child(9) {
+    transition-delay: 0.9s; }
+  .appear.inview .item:nth-child(10) {
+    transition-delay: 1s; }
+
 body {
   font-family: "Kameron", serif;
   font-family: "Noto Sans JP", sans-serif;
@@ -598,7 +641,7 @@ img {
 #container {
   position: relative;
   z-index: 10;
-  background-color: white;
+  background-color: black;
   transition: transform 0.5s, box-shadow 0.5s; }
 
 .header {
@@ -668,7 +711,8 @@ img {
     margin: 0;
     list-style: none; }
   .footer__copyright {
-    color: #535353; }
+    color: #535353;
+    oransform: none; }
   .footer__li {
     padding: 0;
     margin: 10px; }
@@ -702,8 +746,9 @@ img {
 .profile, .skill, .github, .qiita {
   position: relative; }
   .profile.clicked .profile__title, .clicked.skill .profile__title, .clicked.github .profile__title, .clicked.qiita .profile__title, .profile.clicked .skill__title, .clicked.skill .skill__title, .clicked.github .skill__title, .clicked.qiita .skill__title, .profile.clicked .github__title, .clicked.skill .github__title, .clicked.github .github__title, .clicked.qiita .github__title, .profile.clicked .qiita__title, .clicked.skill .qiita__title, .clicked.github .qiita__title, .clicked.qiita .qiita__title {
-    display: none; }
-  .profile.clicked .profile__detail, .clicked.skill .profile__detail, .clicked.github .profile__detail, .clicked.qiita .profile__detail {
+    opacity: 0;
+    transition: all 1.5s; }
+  .profile.clicked .profile__detail, .clicked.skill .profile__detail, .clicked.github .profile__detail, .clicked.qiita .profile__detail, .profile.clicked .skill__detail, .clicked.skill .skill__detail, .clicked.github .skill__detail, .clicked.qiita .skill__detail {
     position: absolute;
     top: 36%;
     left: 50%;
@@ -715,7 +760,8 @@ img {
     text-decoration: none;
     list-style: none;
     opacity: 1;
-    transform: translate(-50%); }
+    transition: all 1.5s;
+    transform: translate(-50%) !important; }
   .profile__inner, .skill__inner, .github__inner, .qiita__inner {
     width: 90%;
     margin: 0 auto; }
@@ -727,19 +773,60 @@ img {
     font-size: 25px;
     color: white;
     opacity: 1;
+    transition: all 1.5s;
     transform: translate(-50%); }
-  .profile__detail {
-    display: none; }
+  .profile__detail, .skill__detail {
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    z-index: 2;
+    display: inline;
+    padding-left: 0;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    opacity: 0;
+    transition: all 1.5s;
+    transform: translate(-50%) !important; }
   .profile__img, .skill__img, .github__img, .qiita__img {
     height: 400px;
     transition: box-shadow 1ms linear 0.8s; }
-    .profile__img > img, .skill__img > img, .github__img > img, .qiita__img > img {
+    .profile__img img, .skill__img img, .github__img img, .qiita__img img {
       position: absolute;
       z-index: 1;
       width: 90%;
       height: 100%;
       cursor: pointer;
       object-fit: cover; }
+
+.skill.clicked .skill__title {
+  opacity: 0;
+  transition: all 1.5s; }
+
+.skill.clicked .skill__detail {
+  position: absolute;
+  top: 36%;
+  left: 27%;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+  font-size: 20px;
+  color: rgba(192, 192, 192, 0.7);
+  text-decoration: none;
+  list-style: none;
+  opacity: 1;
+  transition: all 1.5s; }
+
+.skill__detail {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 250px; }
+  .skill__detail > li {
+    padding: 10px;
+    margin: 10px; }
 
 .skill__img > img {
   position: absolute;

@@ -1,5 +1,6 @@
 import { HeroSlider } from "./libs/hero-slider";
 import { ScrollObserver } from "./libs/scroll-observer";
+import { TweenTextAnimation } from "./libs/text-animation";
 import { MobileMenu } from "./libs/mobile-menu";
 import pace from "pace-js";
 
@@ -36,6 +37,19 @@ class Main {
       this.hero.stop();
     }
   }
+  _inviewAnimation(el, inview) {
+    if (inview) {
+      el.classList.add("inview");
+    } else {
+      el.classList.remove("inview");
+    }
+  }
+  _textAnimation(el, inview) {
+    if (inview) {
+      const ta = new TweenTextAnimation(el);
+      ta.animate();
+    }
+  }
   _paceDone() {
     this._scrollInit();
     this._clickInit();
@@ -43,8 +57,9 @@ class Main {
   _clickInit() {
     this.sections.forEach(section =>
       section.addEventListener("click", function() {
+        const detail = section.querySelector(`.${section.className}__detail`);
         section.classList.toggle("clicked");
-        console.log(section);
+        console.dir(`clicked:${detail}`);
 
         // console.log(section.className);
         // const title = section.querySelector(`.${section.className}__title`);
@@ -55,5 +70,8 @@ class Main {
   }
   _scrollInit() {
     this.observers = new ScrollObserver(".swiper-container", this._toggleSlideAnimation.bind(this), { once: false });
+    this.observers = new ScrollObserver(".tween-animate-title", this._textAnimation);
+    this.observers = new ScrollObserver(".clicked", this._textAnimation);
+    this.observers = new ScrollObserver(".appear", this._inviewAnimation);
   }
 }

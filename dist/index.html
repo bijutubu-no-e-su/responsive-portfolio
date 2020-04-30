@@ -41,35 +41,55 @@
         </div>
         <div id="main-content">
           <main>
-            <section class="profile">
+            <section class="profile appear up">
               <div class="profile__inner">
-                <div class="profile__title">profile</div>
-                <ul class="profile__detail">
-                  <li>date of born: 12/4/1988</li>
-                  <li>birth place: tokyo</li>
-                  <li>blood type: B</li>
-                  <li>occupation: office worker(boring)</li>
-                  <li>address: tokyo</li>
-                </ul>
+                <a name="profile">
+                  <div class="profile__title tween-animate-title">profile</div>
+                  <ul class="profile__detail">
+                    <li>date of born: 12/4/1988</li>
+                    <li>birth place: tokyo</li>
+                    <li>blood type: B</li>
+                    <li>occupation: office worker(boring)</li>
+                    <li>address: tokyo</li>
+                  </ul>
 
-                <div class="profile__img cover-slide hover-darken">
-                  <img class="img-zoom" src="images/night-image-profile.jpg" alt="" />
-                </div>
+                  <div class="profile__img cover-slide hover-darken">
+                    <img class="img-zoom" src="images/night-image-profile.jpg" alt="" /></div
+                ></a>
               </div>
             </section>
             <section class="skill">
               <div class="skill__inner">
-                <div class="skill__title">skill</div>
-                <div class="skill__img cover-slide hover-darken">
-                  <img class="img-zoom" src="images/night-image-skill.jpg" alt="" />
-                </div>
+                <a name="skill">
+                  <div class="skill__title tween-animate-title">skill</div>
+                  <ul class="skill__detail">
+                    <li>C#</li>
+                    <li>css</li>
+                    <li>docker</li>
+                    <li>git</li>
+                    <li>html</li>
+                    <li>java</li>
+                    <li>js</li>
+                    <li>python</li>
+                    <li>react</li>
+                    <li>scss</li>
+                    <li>svn</li>
+                    <li>ts</li>
+                    <li>vb.net</li>
+                  </ul>
+                  <div class="skill__img cover-slide hover-darken">
+                    <img class="img-zoom" src="images/night-image-skill.jpg" alt="" />
+                  </div>
+                </a>
               </div>
             </section>
             <section class="github">
               <div class="github__inner">
                 <div class="github__title">github</div>
                 <div class="github__img cover-slide hover-darken">
-                  <img class="img-zoom" src="images/night-image-github.jpg" alt="" />
+                  <a href="https://github.com/bijutubu-no-e-su">
+                    <img class="img-zoom" src="images/night-image-github.jpg" alt="" />
+                  </a>
                 </div>
               </div>
             </section>
@@ -77,7 +97,9 @@
               <div class="qiita__inner">
                 <div class="qiita__title">qiita</div>
                 <div class="qiita__img cover-slide hover-darken">
-                  <img class="img-zoom" src="images/night-image-qiita.jpg" alt="" />
+                  <a href="https://qiita.com/bijutubu_no_e-su">
+                    <img class="img-zoom" src="images/night-image-qiita.jpg" alt="" />
+                  </a>
                 </div>
               </div>
             </section>
@@ -87,15 +109,15 @@
         <header class="header">
           <div class="header__inner appear up">
             <div class="logo item">
-              <span class="logo__sample">Sample</span>
+              <span class="logo__sample">Portfolio</span>
               <span class="logo__site">Site</span>
             </div>
             <nav class="header__nav">
               <ul class="header__ul">
-                <li class="header__li item"><a href="#">profile</a></li>
-                <li class="header__li item"><a href="#">skill</a></li>
-                <li class="header__li item"><a href="#">github</a></li>
-                <li class="header__li item"><a href="#">qiita</a></li>
+                <li class="header__li item"><a href="#profile">profile</a></li>
+                <li class="header__li item"><a href="#skill">skill</a></li>
+                <li class="header__li item"><a href="https://github.com/bijutubu-no-e-su">github</a></li>
+                <li class="header__li item"><a href="https://qiita.com/bijutubu_no_e-su">qiita</a></li>
                 <li class="header__li item"><a class="btn filled" href="#">Contact</a></li>
               </ul>
             </nav>
@@ -106,8 +128,6 @@
             </button>
           </div>
         </header>
-
-        <div id="main-content"></div>
         <footer class="footer appear up">
           <!-- <div class="logo item"> -->
           <!--   <img class="logo__img" src="images/logo.svg" alt="" /> -->
@@ -116,10 +136,10 @@
           <!-- </div> -->
           <nav class="footer__nav">
             <ul class="footer__ul">
-              <li class="footer__li item"><a href="#">profile</a></li>
-              <li class="footer__li item"><a href="#">skill</a></li>
-              <li class="footer__li item"><a href="#">github</a></li>
-              <li class="footer__li item"><a href="#">qiita</a></li>
+              <li class="footer__li item"><a href="#profile">profile</a></li>
+              <li class="footer__li item"><a href="#skill">skill</a></li>
+              <li class="footer__li item"><a href="https://github.com/bijutubu-no-e-su">github</a></li>
+              <li class="footer__li item"><a href="https://qiita.com/bijutubu_no_e-su">qiita</a></li>
               <li class="footer__li item"><a href="#">contact</a></li>
             </ul>
             <div class="footer__copyright">
@@ -133,22 +153,22 @@
       <nav class="mobile-menu">
         <ul class="mobile-menu__main">
           <li class="mobile-menu__item">
-            <a href="#" class="mobile-menu__link">
+            <a href="#profile" class="mobile-menu__link">
               <span class="main-title">profile</span>
             </a>
           </li>
           <li class="mobile-menu__item">
-            <a href="#" class="mobile-menu__link">
+            <a href="#skill" class="mobile-menu__link">
               <span class="main-title">skill</span>
             </a>
           </li>
           <li class="mobile-menu__item">
-            <a href="#" class="mobile-menu__link">
+            <a href="https://github.com/bijutubu-no-e-su" class="mobile-menu__link">
               <span class="main-title">github</span>
             </a>
           </li>
           <li class="mobile-menu__item">
-            <a href="#" class="mobile-menu__link">
+            <a href="https://qiita.com/bijutubu_no_e-su" class="mobile-menu__link">
               <span class="main-title">qiita</span>
             </a>
           </li>
