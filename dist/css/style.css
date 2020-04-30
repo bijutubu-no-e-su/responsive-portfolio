@@ -598,6 +598,7 @@ template {
     transition-delay: 1s; }
 
 body {
+  overflow-x: hidden;
   font-family: "Kameron", serif;
   font-family: "Noto Sans JP", sans-serif;
   background-color: black; }
@@ -636,6 +637,7 @@ img {
 
 .content-width, .header__inner, .profile, .skill, .github, .qiita {
   width: 95%;
+  max-width: 1070px;
   margin: 0 auto; }
 
 #container {
@@ -806,8 +808,8 @@ img {
 
 .skill.clicked .skill__detail {
   position: absolute;
-  top: 36%;
-  left: 27%;
+  top: 17%;
+  left: 23%;
   z-index: 2;
   display: flex;
   justify-content: space-between;
@@ -823,7 +825,7 @@ img {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 250px; }
+  height: 339px; }
   .skill__detail > li {
     padding: 10px;
     margin: 10px; }
