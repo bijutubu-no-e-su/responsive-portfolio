@@ -281,10 +281,12 @@ img {
   &__detail {
     @extend .profile__detail;
 
+    top: 17%;
+    left: 23%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 339px;
+    height: 358px;
     & > li {
       padding: 10px;
       margin: 10px;
